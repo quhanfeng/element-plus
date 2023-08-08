@@ -18,7 +18,7 @@
       <span class="demonstration">Picker with quick options</span>
       <el-date-picker
         v-model="value2"
-        type="date"
+        type="daterange"
         placeholder="Pick a day"
         :disabled-date="disabledDate"
         :shortcuts="shortcuts"
@@ -46,7 +46,7 @@ const shortcuts = [
     value: () => {
       const date = new Date()
       date.setTime(date.getTime() - 3600 * 1000 * 24)
-      return date
+      return [date,date]
     },
   },
   {
